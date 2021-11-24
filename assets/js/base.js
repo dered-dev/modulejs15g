@@ -10,17 +10,29 @@
 const a = parseInt(prompt('dame el valor de A'))
 const b = parseInt(prompt('dame el valor de B'))
 
-if(isNaN(a) === false && isNaN(b) === false ){
-    if(a > b ) {
-        console.log(a / b)
-    } else if(a < b){
-        console.log(a + b)
-    } else if(a === b) {
-        console.log(a * b)
-    }
-} else {
-    console.error('Algunos de los numeros no son tipo number')
-}
+// if(isNaN(a) === false && isNaN(b) === false ){
+//     if(a > b ) {
+//         console.log(a / b)
+//     } else if(a < b){
+//         console.log(a + b)
+//     } else if(a === b) {
+//         console.log(a * b)
+//     }
+// } else {
+//     console.error('Algunos de los numeros no son tipo number')
+// }
+
+!isNaN(a) && !isNaN(b) ? 
+    a > b ? console.log(a / b)
+    : a < b ?  console.log(a + b)
+    : a === b ? console.log(a * b)
+    : ''
+:
+console.error('Algunos de los numeros no son tipo number')
+
+
+
+
 
 
 //    console.log('tabla del ' + (i+ 3) + '.') 
@@ -32,9 +44,6 @@ if(isNaN(a) === false && isNaN(b) === false ){
 //    } 
 
 // }
-
-
-
 
 
 
