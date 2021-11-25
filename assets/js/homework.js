@@ -51,7 +51,10 @@ switch (dayWeek) {
     case "martes":
         console.log(`${day} es el dia 2`)
         break
-
+    case "Miercoles":
+    case "Miércoles":
+    case "MIÉRCOLES":
+    case "MIERCOLES":
     case "miercoles":
     case "miércoles":
         console.log(`${day} es el dia 3`)
