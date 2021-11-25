@@ -20,7 +20,9 @@
 
 const numberUserCond = parseInt(prompt("Dame un numero entre 1 y 100"))
 if (!isNaN(numberUserCond) && numberUserCond > 0 && numberUserCond <= 100) {
-    numberUserCond % 2 === 0 ?  console.log(`${numberUserCond} es par`) : console.log(`${numberUserCond} es impar`)
+    numberUserCond % 2 === 0 ?  
+    console.log(`${numberUserCond} es par`) : 
+    console.log(`${numberUserCond} es impar`)
 } else {
     console.error("valor no aceptado")
 }
@@ -100,12 +102,10 @@ if ( !isNaN(numberOne) && !isNaN(numberTwo) ) {
     } else if (numberOne > numberTwo) {
         console.log(`El número ${numberOne} es el mayor`)
         console.log(`El número ${numberTwo} es el menor`)
-    } else (numberOne < numberTwo) {
+    } else {
         console.log(`El número ${numberTwo} es el mayor`)
         console.log(`El número ${numberOne} es el menor`)
     }
-    
-    
 } else {
     console.error("Algunos valores no son numéricos")
 }
