@@ -38,6 +38,7 @@ if (!isNaN(numberUserCond) && numberUserCond > 0 && numberUserCond <= 100) {
  */
 
 const dayWeek = prompt("¿Qué día de la semana es hoy?")
+
 switch (dayWeek) {
     case "Lunes":
     case "LUNES":
@@ -50,10 +51,7 @@ switch (dayWeek) {
     case "martes":
         console.log(`${day} es el dia 2`)
         break
-    case "Miercoles":
-    case "Miércoles":
-    case "MIÉRCOLES":
-    case "MIERCOLES":
+
     case "miercoles":
     case "miércoles":
         console.log(`${day} es el dia 3`)
