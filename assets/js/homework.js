@@ -40,48 +40,48 @@ switch (dayWeek) {
     case "Lunes":
     case "LUNES":
     case "lunes":
-        console.log(`${day} es el dia 1`);
-        break;
+        console.log(`${day} es el dia 1`)
+        break
 
     case "Martes":
     case "MARTES":
     case "martes":
-        console.log(`${day} es el dia 2`);
-        break;
+        console.log(`${day} es el dia 2`)
+        break
     case "Miercoles":
     case "Miércoles":
     case "MIÉRCOLES":
     case "MIERCOLES":
     case "miercoles":
     case "miércoles":
-        console.log(`${day} es el dia 3`);
-        break;
+        console.log(`${day} es el dia 3`)
+        break
     case "Jueves":
     case "JUEVES":
     case "jueves":
-        console.log(`${day} es el dia 4`);
-        break;
+        console.log(`${day} es el dia 4`)
+        break
     case "Viernes":
     case "VIERNES":
     case "viernes":
-        console.log(`${day} es el dia 5`);
-        break;
+        console.log(`${day} es el dia 5`)
+        break
     case "Sabado":
     case "Sábado":
     case "SABADO":
     case "SÁBADO":
     case "sabado":
     case "sábado":
-        console.log(`${day} es el dia 6`);
-        break;
+        console.log(`${day} es el dia 6`)
+        break
     case "Domingo":
     case "DOMINGO":
     case "domingo":
-        console.log(`${day} es el dia 7`);
-        break;
+        console.log(`${day} es el dia 7`)
+        break
     default:
-        console.error(`Es un día invalido`);
-        break;
+        console.error(`Es un día invalido`)
+        break
 }
 
 /**
@@ -91,21 +91,21 @@ switch (dayWeek) {
  * Imprimir en consola cual es el mayor de los 2
  */
 
-const numberOne = parseInt(prompt("Dame el valor del primer número"));
-const numberTwo = parseInt(prompt("Dame el valor del segundo número"));
+const numberOne = parseInt(prompt("Dame el valor del primer número"))
+const numberTwo = parseInt(prompt("Dame el valor del segundo número"))
 
 if ( !isNaN(numberOne) && !isNaN(numberTwo) ) {
-    if (numberOne > numberTwo) {
-        console.log(`El número ${numberOne} es el mayor`);
-        console.log(`El número ${numberTwo} es el menor`);
-    }
-    if (numberOne < numberTwo) {
-        console.log(`El número ${numberTwo} es el mayor`);
-        console.log(`El número ${numberOne} es el menor`);
-    }
     if (numberOne === numberTwo) {
-        console.log(`Los números son iguales`);
+        console.log(`Los números son iguales`)
+    } else if (numberOne > numberTwo) {
+        console.log(`El número ${numberOne} es el mayor`)
+        console.log(`El número ${numberTwo} es el menor`)
+    } else (numberOne < numberTwo) {
+        console.log(`El número ${numberTwo} es el mayor`)
+        console.log(`El número ${numberOne} es el menor`)
     }
+    
+    
 } else {
-    console.error("Algunos valores no son numéricos");
+    console.error("Algunos valores no son numéricos")
 }
