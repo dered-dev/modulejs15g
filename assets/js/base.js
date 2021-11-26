@@ -1,17 +1,44 @@
 
-// celsius to fahrenheit
-// const celsiusGrade = parseInt(prompt('Grados celsius en tu localidad'))
-// if( !isNaN(celsiusGrade) ){
-	 
-// 	console.log('parte 1')
-// 	console.log('parte 2')
-// 	let fahrenheitGrade  = (celsiusGrade * 9/5) + 32
-// 	console.log(`La temperatura actual es de: ${fahrenheitGrade}ºF`)
-	 
-// } else {
-// 	console.log('Es necesario un número')
+
+// let saludo = 'hola' 
+// for(i = 0; i < saludo.length; i++ ) {
+//     console.log(saludo[i])
 // }
 
+//  pedir al usuario un string
+//  contar las vocales y las consonantes
+// imprimir en consola
+// 2 vocales y 2 consonantes
 
-let saludoLarge = 'Hola que hace'.length
-console.log(saludoLarge)
+const userWord = prompt('Dame una palabra')
+
+if(userWord.length > 0){
+    let vowels = 0
+    let consonant = 0
+    for(i = 0; i < userWord.length; i++ ) {
+        let letter = userWord[i].toLowerCase()
+        if(letter !== ' '){
+            if(
+                letter === 'a' ||
+                letter === 'e' ||
+                letter === 'i' ||
+                letter === 'o' ||
+                letter === 'u' ||
+                letter === 'á' ||
+                letter === 'é' ||
+                letter === 'í' ||
+                letter === 'ó' ||
+                letter === 'ú'
+            ) {
+                // vowels = vowels + 1
+                // vowels += 1
+                vowels++
+            } else {
+                consonant++
+            }
+        }
+    }
+    console.log(`${vowels} vocales y ${consonant} consonantes`)
+} else {
+    console.log('Inserta una palabra por favor')
+}
