@@ -7,7 +7,9 @@
  * domingo -> 1, lunes -> 2, martes -> 3, etc...
  */
 
-const dayWeek = prompt("¿Qué día de la semana es hoy?").toLowerCase();
+let dayWeek = prompt("¿Qué día de la semana es hoy?")
+dayWeek  = dayWeek.toLowerCase();
+
 switch (dayWeek) {
   case "lunes":
     console.log(`${day} es el dia 1`);
