@@ -96,3 +96,8 @@ for(i = 1; i <= 100; i++){
     i % 3 === 0 || i % 5 === 0 ? counterMulti += i : ''
 }
 console.log(counterMulti)
+
+
+let subjects = parseInt( prompt('Total de materias') )
+let total, average = 0
+let counter = 1
