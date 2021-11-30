@@ -1,55 +1,55 @@
-// Exercises
 
 
-/*
-	Pedir al usuario una palabra
-	Devolver la palabra capitalizada
-	p.ej. 'galAxiA'
-	Ouput -> 'Galaxia'
-*/
-const wordUser = prompt('Dame una oración').trim().toLowerCase()
-var wordCap = wordUser.substring(0,1).toUpperCase() + wordUser.substring(1)
-console.log(wordCap)
+// console.log('funciones')
 
-/*
-	Pedir al usuario una oración (permitir espacios)
-	Capitalizar cada una de las palabras de la oración
-	p.ej. 'En una galaxia muy muy lejana'
-	Ouput -> 'En Una Galaxia Muy Muy Lejana'
-*/
+// funcion sin parametros
+function suma() {
+	return 2 +  2
+}
 
+// funcion con parametros
+function toCelsius(fahrenheit) {
+	let celsiusGrades = (5 / 9) * (fahrenheit - 32)	
 
-const word = prompt('Dame una oración').trim().toLowerCase()
-let wordCapitalize = ''
-// en una galaxia
-for(i = 0; i < word.length; i++){
-    if(word[i] == ' '){
-        wordCapitalize += ' ' + word[i + 1].toUpperCase()
-        i = i + 1
-    } else {
-        wordCapitalize = wordCapitalize + word[i]
+	// retorno de la funcion
+	return celsiusGrades
+}
+
+// let celsiusGradesReturned = toCelsius(100)
+// console.log(celsiusGradesReturned)
+
+/**
+ * Funcion que pida el nombre al usuario
+ * y lo imprima en consola
+ */
+
+function getName() {
+	let nameUser = prompt('Dame tu nombre', 'jorge')
+	console.log(nameUser)
+}
+// getName()
+
+/**
+ * Funcion que reciba una palabra
+ * y la retorne al revés
+ */
+
+function stringReverse (stringToReverse){
+	// hola
+    let stringReversed = ''
+    for(let i = stringToReverse.length - 1; i >= 0 ; i--) {
+        stringReversed += stringToReverse[i]
     }
-}
-// en Una Galaxia
-wordCapitalize = wordCapitalize.substring(0,1).toUpperCase() + wordCapitalize.substring(1)
-// En Una Galaxia
-console.log(wordCapitalize)
-
-
-
-/*
-	Pedir al usuario cuantas materias tiene actualmente
-	Pedir al usuario la calificacion de cada una de esas N materias
-	Arrojar el promedio en un alert
-*/
-
-let totalSubjects = parseInt( prompt('Total de materias') )
-let total = 0, average = 0, counter = 1;
-
-while(counter <= totalSubjects){
-    total = total + parseInt(prompt(`Calificación de la materia ${counter}: `))
-    counter++
+    return stringReversed
 }
 
-average = total / totalSubjects
-alert(`El promedio es: ${average}`)
+
+function sumNumbers(a, b = 5) {
+	let suma = a + b
+	return suma
+}
+
+let resultado = sumNumbers(10)
+
+
+
