@@ -2,7 +2,12 @@
 /**
  * Escribir un arrow function que invierta una oracion
  * hint: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse
+ * hint: https://www.w3schools.com/jsref/jsref_join.asp
  */
+
+
+
+
 
 /**
  * Escribir un arrow function que compruebe
