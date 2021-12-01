@@ -92,6 +92,7 @@ const arrayReduce = (arrOne, arrTwo) => {
  * -> [1,2]
 */
 
+// large
 // const getRepeatItems =  (arrOne, arrTwo) => {
 //     let concatArr = arrOne.concat(arrTwo)
 //     let arrRepeated = []
@@ -102,9 +103,9 @@ const arrayReduce = (arrOne, arrTwo) => {
 //         }
 //     })
 //     return arrRepeated
-
 // }
 
+// middle
 // const getRepeatItems =  (arrOne, arrTwo) => {
 //     let arrRepeated = []
 //     arrOne.concat(arrTwo).forEach((element, index) =>  {
@@ -114,6 +115,7 @@ const arrayReduce = (arrOne, arrTwo) => {
 // }
 
 
+// Large filter
 // const getRepeatItems =  (arrOne, arrTwo) => {
 //     let arrRepeated = []
 //     arrRepeated = arrOne.concat(arrTwo).filter((element, index, arr) =>  {
@@ -125,10 +127,12 @@ const arrayReduce = (arrOne, arrTwo) => {
 //     return arrRepeated
 // }
 
+// short filter
 // const getRepeatItems = (arrOne, arrTwo) => {
 //     return arrOne.concat(arrTwo).filter((element, index,arr) =>  {
 //         return arr.indexOf(element) !== index ? element : ''
 //     })
 // }
 
+// one line -- not recomended
 const getRepeatItems = (arrOne, arrTwo) => arrOne.concat(arrTwo).filter((item, index,arr) => arr.indexOf(item) !== index ? item : '')
