@@ -1,55 +1,49 @@
 
 
-// console.log('funciones')
-
-// funcion sin parametros
-function suma() {
-	return 2 +  2
+// ES6
+// funcion tradicional
+function sumaTradicional(a, b = 5) {
+	return a + b
 }
 
-// funcion con parametros
-function toCelsius(fahrenheit) {
-	let celsiusGrades = (5 / 9) * (fahrenheit - 32)	
-
-	// retorno de la funcion
-	return celsiusGrades
+// arrow function
+const sumaArrow = (a, b = 5) => {
+	// sentences
+	// ...
+	return a + b
 }
 
-// let celsiusGradesReturned = toCelsius(100)
-// console.log(celsiusGradesReturned)
+// arrow function short version
+const sumaShortVersion = (a, b = 5) => a + b
 
-/**
- * Funcion que pida el nombre al usuario
- * y lo imprima en consola
- */
+// declaration
 
-function getName() {
-	let nameUser = prompt('Dame tu nombre', 'jorge')
-	console.log(nameUser)
-}
-// getName()
-
-/**
- * Funcion que reciba una palabra
- * y la retorne al revés
- */
-
-function stringReverse (stringToReverse){
-	// hola
-    let stringReversed = ''
-    for(let i = stringToReverse.length - 1; i >= 0 ; i--) {
-        stringReversed += stringToReverse[i]
-    }
-    return stringReversed
+const nombreFuncion = (param1, paramN) => {
+	// sentencias
+	//...
+	return 
 }
 
+// invoke 
+// let resultInvoke = nombreFuncion(param1, paramN)
 
-function sumNumbers(a, b = 5) {
-	let suma = a + b
-	return suma
+// Ejemplo
+const sumaOk = (a) => {
+	return  a * 2
+}
+// ejemplo con 1 parametro
+const sumaOkOneParam = a => {
+	return  a * 2
 }
 
-let resultado = sumNumbers(10)
+// En una sola linea
+const sumaOkOneLine = a => a * 2
+
+
+
+
+
+
 
 
 
