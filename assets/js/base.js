@@ -37,7 +37,7 @@ const arrExample = [11,2,3,10,5]
 const resultado = arrExample.map( (val) => {
 	return val * 2
 })
-console.log(resultado)
+// console.log(resultado)
 
 // dado un array de numeros,
 // retornar un array con los numeros convertidos a string
@@ -57,17 +57,47 @@ const numberToString = arr => {
 
 // .map()
 // función
-// Dado unn array como parametro 
+// Dado un array como parametro 
 // capitalizar todos los elementos que sean strings
 // typeof variable
+
 // input: ['hOlA', 'mundo', 123]
 // output -> ['Hola','Mundo', 123]
 
 const capitalizeArr = (arr) => {
 
+	let arrCapitalized =  []
+	arrCapitalized = arr.map( (element) => {
+			if(typeof element === 'string') {
+				let stringCap = `${element.slice(0,1).toUpperCase()}${element.slice(1).toLowerCase()}`
+				return stringCap
+			} else {
+				return element
+			}
+    	}
+	)
+	
+	return arrCapitalized
 } 
 
+let arrToCap = ['hOlA', 'mundo', 5, [3,4], 'otro']
+let resultCap = capitalizeArr(arrToCap)
+// console.log(resultCap)
 
-let resultCap = capitalizeArr(['hOlA', 'mundo', 123])
-console.log(resultCap)
 
+
+
+// arr.filter()
+const arrayCitys = ['colima','CDMX','Monterrey', 'Guadalajara']
+
+// del array anterior
+// filtrar solo las ciudades que empiecen con C
+let resultFilter = arrayCitys.filter( (cv,index, arr) => {
+
+	if(cv.toLowerCase().slice(0,1) === 'c'){
+		return cv
+	}
+
+})
+
+console.log(resultFilter)
