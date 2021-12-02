@@ -16,8 +16,16 @@ const mostBigger = (arr) => {
 	})
 	return biggest
 }
-console.log( mostBigger( [1, 4, 10] ) )
 
 
 
-
+const smallerNumber = (arr) => {
+	let smaller = arr[0]
+	arr.forEach( (value) => {
+		if(smaller > value){
+			smaller = value
+		}
+	})
+	return smaller
+}
+console.log( smallerNumber( [5,7, 3, 4, 10] ) )
