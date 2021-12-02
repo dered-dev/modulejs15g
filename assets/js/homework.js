@@ -33,7 +33,7 @@ const isPalindrome = (sentence) => {
     let sentenceNormalized = sentence.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
     let sentenceWithoutSpaces = sentenceNormalized.replace(/\s/g,'')
     let sentenceReversed = sentenceWithoutSpaces.split('').reverse().join('')
-    if(sentenceWithoutSpaces === sentenceReversed){
+    if(sentenceWithoutSpaces === sentenceReversed) {
         return true
     } else {
         return false
@@ -43,14 +43,14 @@ const isPalindrome = (sentence) => {
 // const isPalindrome = sentence => {
 //     let sentenceNormalized = sentence.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s/g,'')
 //     let sentenceReversed = sentenceNormalized.split('').reverse().join('')
-//     sentenceNormalized === sentenceReversed ? true : false
+//     return sentenceNormalized === sentenceReversed ? true : false
 // }
 
 
 /**
  * Escribir un arrow function que tome como parametro 2 arrays, 
  * y devuelva un numero con la suma total de esos 2 arrays.
- * arrayReduce( [1,2,3,4], [1,2]) 
+ * arrayReduce( [1,2,3,4], [1,2] ) 
  * -> 13
  * 
  * hint: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat
@@ -61,12 +61,26 @@ const isPalindrome = (sentence) => {
 const arrayReduce = (arrOne, arrTwo) => {
     let newArr = arrOne.concat(arrTwo)
     let arrAdd = 0
-    newArr.forEach( (item) => {
-        arrAdd += item
+    
+    // funcion tradicional
+    // newArr.forEach( function (item) {
+    //     arrAdd += item
+    // })
+
+    // arrow function
+    newArr.forEach( value => {
+        arrAdd = arrAdd + value
     })
 
+    // newArr.forEach( value => arrAdd += value )
     return arrAdd
 }
+
+
+let resultado = arrayReduce( [1,2], [3] )
+console.log(resultado)
+
+
 
 // middle
 // const arrayReduce = (arrOne, arrTwo) => {
