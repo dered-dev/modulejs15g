@@ -18,14 +18,32 @@ const mostBigger = (arr) => {
 }
 
 
-
 const smallerNumber = (arr) => {
 	let smaller = arr[0]
+	
 	arr.forEach( (value) => {
 		if(smaller > value){
 			smaller = value
 		}
 	})
+
 	return smaller
 }
-console.log( smallerNumber( [5,7, 3, 4, 10] ) )
+// console.log( smallerNumber( [5,7, 3, 4, 10] ) )
+
+
+// arr.map()
+const arrExample = [11,2,3,10,5]
+const resultado = arrExample.map( (val) => {
+	return val * 2
+})
+console.log(resultado)
+
+// dado un array de numeros,
+// retornar un array con los numeros convertidos a string
+// Entrada : [11,2,3,10,5]
+// Salida : ['11','2','3','10','5']
+
+
+
+
