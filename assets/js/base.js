@@ -44,6 +44,30 @@ console.log(resultado)
 // Entrada : [11,2,3,10,5]
 // Salida : ['11','2','3','10','5']
 
+const numberToString = arr => {
+	arr.map( element => {
+		return element.toString() 
+	})
+}
+
+// const numberToString = arr => arr.map( element => element.toString() )
 
 
+
+
+// .map()
+// función
+// Dado unn array como parametro 
+// capitalizar todos los elementos que sean strings
+// typeof variable
+// input: ['hOlA', 'mundo', 123]
+// output -> ['Hola','Mundo', 123]
+
+const capitalizeArr = (arr) => {
+
+} 
+
+
+let resultCap = capitalizeArr(['hOlA', 'mundo', 123])
+console.log(resultCap)
 
