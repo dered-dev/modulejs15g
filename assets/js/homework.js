@@ -11,6 +11,7 @@ const mostLarge  = (arr) => {
     
 }
 
+
 /**
  * arr.map()
  * Dado un array 
@@ -26,6 +27,7 @@ const reverseStringArr  = (arr) => {
 }
 
 
+
 /**
  * arr.filter(), .map()
  * Funcion que reciba un array de strings y numeros
@@ -34,11 +36,12 @@ const reverseStringArr  = (arr) => {
  * luego, filtre solo los que tengan mas de 5 caracteres
  * y al final, los que tengan al menos 2 letras "a" 
  * 
- * p.ej.  
- * 
+ * p.ej.  filterStrings( ['guadalajara', 3, 'caracas', 'Oslo', 'brasil', 0] )
+ * Salida -> ['Guadalajara', 'Caracas']
  */
 
 const filterStrings  = (arr) => {
-
+    
 }
+
 
