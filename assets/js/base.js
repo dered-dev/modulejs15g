@@ -63,6 +63,29 @@ const filterStrings = (arr) => {
 	.filter( (item ) => item.slice(0,1) === 'H')
 }
 
+const filterStringsLarge = (arr) => {
+	let onlyStrings = []
+	onlyStrings = arr.filter( (item) => {
+		if(typeof item === 'string') {
+			return item
+		}
+	})
+
+	let toUpper = []
+	toUpper = onlyStrings.map( (item) => {
+		return item.toUpperCase()
+	})
+
+	let onlyH = []
+	onlyH = toUpper.filter( (item ) => { 
+		if(item.slice(0,1) === 'H') {
+			return item
+		}
+	})
+
+	return onlyH
+}
+
 
 
 let arr = [5,2,3]
@@ -77,7 +100,6 @@ let acumulador = 0
 // arr.reduce()
 let suma = arr.reduce((acc, cv, index, arr)=> {
 	// console.log(acc, cv)
-
 	return acc + cv
 }, 0 )
 
@@ -85,7 +107,7 @@ let arrStr = ['hola', 'mundo']
 let concatStr = arrStr.reduce((acc, cv, index, arr)=> {
 	console.log(acc, cv, index, arr )
 	return acc + cv
-	
+
 }, 'saludo: ')
 
 console.log(concatStr)
