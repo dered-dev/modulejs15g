@@ -31,17 +31,30 @@ const getFullName = (arr) => {
 }
 
 // ->'jlcc'
-const getInitialLetters = (arr) => {
-    let initials = ''
-    initials = arr.reduce( ( acc, cv) => `${acc}${cv.slice(0,1)}`, '')
-    return initials
-}
+const getInitialLetters = (arr) => arr.reduce( ( acc, cv) => `${acc}${cv.slice(0,1)}`, '' )
+
+// const getInitialLetters = (arr) => {
+//     return arr.reduce( ( acc, cv) => `${acc}${cv.slice(0,1)}`, '')
+// }
 
 
 let initial = getInitialLetters(fullname)
-console.log(initial)
+// console.log(initial)
 
 // [].reduce( (acc,value, index, array) => {}) -> []
+
+let arrRedNumbers = [11,10,9]
+// -> [22,20,18]
+
+let resArrReduced = []
+resArrReduced = arrRedNumbers.reduce( (acc, cv) => {
+    acc.push(cv * 2)
+    return acc
+}, [10,20] )
+
+console.log(resArrReduced)
+
+
 
 
 
