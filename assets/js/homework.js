@@ -57,21 +57,58 @@ const reverseStringArr  = (arr) => {
  * Salida -> ['Guadalajara', 'Caracas']
  */
 
-const filterStrings  = (arr) => {
-    return arr.filter(item => typeof item === 'string')
-    .map(item => {
-        return item.slice(0,1).toUpperCase() + item.slice(1).toLowerCase()
+// const filterStrings  = (arr) => {
+//     return arr.filter(item => typeof item === 'string')
+//     .map( item => {
+//         return item.slice(0,1).toUpperCase() + item.slice(1).toLowerCase()
+//     })
+//     .filter( item => {
+//         return item.length > 5
+//     })
+//     .filter( item => {
+//         return item.split('a').length >= 3
+//     })
+// }
+
+const filterStringsLarge  = (arr) => {
+    let onlyStrings = []
+    onlyStrings = arr.filter((item) => {
+        if(typeof item === 'string' ) {
+            return item
+        }
     })
-    .filter( item => {
-        
-        return item.length > 5
+
+    let capStrings = []
+    capStrings = onlyStrings.map((item) => {
+        let capWord = ''
+        capWord = item.slice(0,1).toUpperCase() + item.slice(1).toLowerCase()
+        return capWord
     })
-    .filter( item => {
-        console.log(item)
-        return item.split('a').length > 2
+    
+    let largestStr = []
+    largestStr = capStrings.filter((item) => {
+        if(item.length > 5){
+            return item
+        }
     })
+    let onlyAA = []
+
+    onlyAA = largestStr.filter( item => {
+        if(item.split('a').length >= 3){
+            return item
+        }
+    })
+
+    return onlyAA
+
 }
 
-filterStrings( ['guadalajara', 3, 'caracas', 'Oslo', 'brasil', 0] ) 
+const filterStrings  = (arr) => {
+    return arr.filter( item => typeof item === 'string')
+    .map( item => item.slice(0,1).toUpperCase() + item.slice(1).toLowerCase())
+    .filter( item => item.length > 5)
+    .filter( item => item.split('a').length >= 3)
+}
+
 
 
