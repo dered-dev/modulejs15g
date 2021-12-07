@@ -18,6 +18,16 @@ let users = [
 //   }
 // hint: .reduce() o .forEach()
 
+const joinUsers = (arr) => {
+    return arr.reduce( (acc, user) => {
+        let userName = user.firstName + ' ' + user.lastName
+        acc[userName] = user.role
+        return acc
+    }, {})
+}
+
+console.log(joinUsers(users))
+
 
 // Ejercicio 2:
 //  tomando el array users,
@@ -29,9 +39,8 @@ let users = [
 //          { firstName: 'Zach', lastName: 'Klabunde', role: 'Instructor'}
 //      ]
 // hint: .filter()
-const filterUserByRole = (arr, role) => {
-
-}
+const filterUserByRole = (arr, role) => arr.filter(user => user.role === role )
+console.log(filterUserByRole(users, 'Instructor'))
 
 
 // Ejercicio 3
@@ -54,3 +63,21 @@ let persons = [
     {name: 'Jeff', age: 30, voted: true},
     {name: 'Zack', age: 19, voted: false}
 ]
+
+
+const personVoted = (arrPersons) => {
+    return arrPersons.reduce( (acc, person) => {
+        return person.voted == true ? acc + 1: acc
+    }, 0)
+} 
+
+console.log(personVoted(persons))
+
+
+const averageAgeVoters = () =>  {
+    return persons.reduce( (acc, person) => {
+        return acc + person.age
+    }, 0) / persons.length
+}
+
+console.log(averageAgeVoters(persons))
