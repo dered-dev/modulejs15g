@@ -43,7 +43,7 @@
  */
 
 const isAnObjectOrArray = (element) => {
-    
+
 }
 
 /**
@@ -63,6 +63,26 @@ const isAnObjectOrArray = (element) => {
  */
 const makePairs = (object) => {
     
+}
+
+
+/**
+ * Realizar una funcion que tome como parametro un string
+ * y retorne un array con todos caracteres del string
+ * 
+ * Resultado esperado: 
+ * ·> splitString('hola mundo')
+ * ·> ['h','o','l','a',' ','m','u','n','d','o']
+ * 
+ * @params 'String' - El String que queremos transformar
+ * @return [Array] - El array que se espera retornar
+ * 
+ * 
+ * @hint https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
+ */
+
+const splitString = (str) => {
+
 }
 
 
