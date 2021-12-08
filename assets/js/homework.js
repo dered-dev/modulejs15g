@@ -1,97 +1,60 @@
-// Ejercicio 1
-// dado el siguiene array de objetos
-let users = [
-    { firstName: 'Bradley', lastName: 'Bouley', role: 'Full Stack Resident' },
-    { firstName: 'Chloe', lastName: 'Alnaji', role: 'Full Stack Resident' },
-    { firstName: 'Jonathan', lastName: 'Baughn', role: 'Enterprise Instructor' },
-    { firstName: 'Michael', lastName: 'Herman', role: 'Lead Instructor' },
-    { firstName: 'Robert', lastName: 'Hajek', role: 'Full Stack Resident' },
-    { firstName: 'Wes', lastName: 'Reid', role: 'Instructor'},
-    { firstName: 'Zach', lastName: 'Klabunde', role: 'Instructor'}
-]
+/**
+ * Ejercicio 1.
+ * Dado un objeto inicial, hacer los siguientes puntos 
+ * 
+ * 1. Agregar el lenguaje 'Go' a la lista de lenguajes
+ * 2. Cambiar el nivel a 4
+ * 3. Eliminar la propiedad avatar
+ * 4. Agregar una nueva propiedad de edad y poner el valor de 30
+ * 5. Imprimir en consola todos los lenguajes dominados
+ * 6. Clonar el objeto en uno nuevo
+ * 7. Imprimir en consola el nuevo objeto
+ */
 
-// obtener un nuevo objeto con esta estructura
-//-> {
-//    'Bradley Bouley': 'Full Stack Resident',
-//   'Chloe Alnaji': 'Full Stack Resident'
-//      ....
-//   }
-// hint: .reduce() o .forEach()
-
-const joinUsers = (arr) => {
-    return arr.reduce( (acc, user) => {
-        let userName = user.firstName + ' ' + user.lastName
-        acc[userName] = user.role
-        return acc
-    }, {} )
+ let koder = {
+    languages: ["JavaScript", "Python", "Ruby"],
+    isMentor: true,
+    level: 3,
+    avatar: "https://picsum.photos/200/300"
 }
 
-// console.log(joinUsers(users))
+/**
+ * Ejercicio 2:
+ * Escribir una funcion que reciba un parametro
+ * Verificar si el parametro es un objeto
+ * o si es un array
+ * p.ej.  
+ * ·> isAnObjectOrArray( [1,2,3] )
+ * -> 'Es un array'
+ * ·> isAnObjectOrArray( {key:'value'} )
+ * -> 'Es un Objeto'
+ * ·> isAnObjectOrArray( 'Hola mundo' )
+ * -> 'No es un array ni un objeto'
+ * 
+ * hint: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof
+ * hint: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray
+ * 
+ */
 
 
-// Ejercicio 2:
-//  tomando el array users,
-//  hacer una funcion que reciba 2 parametros (arrayUsers, role)
-//  y retorne un array con los usuarios que cumplan con el role
-// -> filterUserByRole(arrayUsers, 'Instructor')
-// ->   [
-//          { firstName: 'Wes', lastName: 'Reid', role: 'Instructor'},
-//          { firstName: 'Zach', lastName: 'Klabunde', role: 'Instructor'}
-//      ]
-// hint: .filter()
-const filterUserByRole = (arr, role) => arr.filter(user => user.role === role )
-// console.log(filterUserByRole(users, 'Instructor'))
-
-
-// Ejercicio 3
-// tomando el siguiente array de objetos
-// filtrar lo siguiente
-// 1. Cantidad de personas que votaron
-// 2. Cual es el promedio de Edad de los votantes
-
-let persons = [
-    {name:'Bob' , age: 30, voted: true},
-    {name:'Jake' , age: 32, voted: true},
-    {name:'Kate' , age: 25, voted: false},
-    {name:'Sam' , age: 20, voted: false},
-    {name:'Phil' , age: 21, voted: true},
-    {name:'Ed' , age: 55, voted:true},
-    {name:'Tami' , age: 54, voted:true},
-    {name: 'Mary', age: 31, voted: false},
-    {name: 'Becky', age: 43, voted: false},
-    {name: 'Joey', age: 41, voted: true},
-    {name: 'Jeff', age: 30, voted: true},
-    {name: 'Zack', age: 19, voted: false}
-]
-
-const personVoted = (arrPersons) => {
-
-    return arrPersons.reduce( (acc, person) => {
-        if(person.voted == true){
-            return acc + 1
-        } else {
-            return acc
-        }
-        // return person.voted == true ? acc + 1: acc
-    }, 0)
-
-} 
-
-// console.log(personVoted(persons))
-
-
-const averageAgeVotersLarge = (arr) =>  {
-    let totalAge = 0
-    totalAge =  arr.reduce( (acc, person) => {
-        return acc + person.age
-    }, 0)
-    let totalPersons = arr.length
-    let average = totalAge / totalPersons
-    return average
+/**
+ * Ejercicio 3.
+ * Realizar una funcion que tome como parametro un objeto
+ * y devuelva un array de arrays con la siguiente estructura
+ * [ [key, value], [key, value] ]
+ * Resultado esperado: makePairs({ a: 1, b: 2 }) => [['a', 1], ['b', 2]]
+ * 
+ * @params {Object} object - El objeto que queremos transformar
+ * @returns {Array} - El array que se espera retornar
+ * 
+ * @hint https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries
+ * @hint https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+ * 
+ * Se tiene que realizar 2 soluciones, 1 con Object.entries() y otra con .map()
+ */
+const makePairs = (object) => {
+    
 }
 
-const averageAgeVoters = (arr) => arr.reduce( (acc, person) => acc + person.age, 0) / arr.length 
 
 
-console.log(averageAgeVotersLarge(persons))
-console.log(averageAgeVoters(persons))

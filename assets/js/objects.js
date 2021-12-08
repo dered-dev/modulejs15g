@@ -1,202 +1,244 @@
-// Propiedades
-// key: valor
-let carObject = {
-    modelo: 'jetta',
-    marca: 'VW',
-    color: 'rojo',
-    year: 2020,
-    tenencias: [2019, 2020, 2021]
+
+// elemento.metodo(parametros)
+// Object.keys(obj)
+let salarios  = {
+    'jorge':  3000,
+    'juan':  7000,
+    'Pedro':  8000
 }
 
 
-// Objeto Koder
-let koder = {
-    name: 'jorge luis',
-    lastName: 'Camarillo',
-    age: 30,
-    generation: 6,
-    modulos: ['js','node js', 'cloud'],
+
+
+
+let empleados = []
+// for( item in salarios){
+//     empleados.push(item)
+// }
+
+// console.log( Object.keys(salarios) )
+
+// funcion
+// recibe un objeto
+// retornar el total de los salarios
+
+// hint : reduce
+// hint : forEach
+
+const sumarSalarios = (obj) => {
+    let suma = 0
+    Object.keys(obj).forEach( (empleado, index, arr) => {
+
+        let salario = obj[empleado]
+        suma = suma + salario
+        // suma += salario
+    })
+    return suma
 }
 
 
-// Create
-// koder['isMentorCorchete'] = false
-// koder.modulos = ['js','node js', 'cloud']
-koder.ismentor = true
-
-// Read
-// console.log(koder.isMentor)
-// console.log(koder.name.toUpperCase())
-
-// Update
-koder.name = 'juan'
-koder.modulos.push('otro item')
-
-// Delete
-// delete object.propiedad
-delete koder.age
+// console.log(sumarSalarios(salarios))
 
 
-
-
-// [].forEach((value, index, array) => {})
-// [].filter((value, index, array) => {})
-// [].map((value, index, array) => {})
-// [].reduce((acc, value, index, array) => {})
-
-let cities = {
-    "49": "Germany",
-    "41": "Switzerland",
-    "44": "Great Britain"
-}
-  
-for (let city in cities) {
-    // console.log(city)
+const sumarSalariosRed = (obj) => {
+    let suma = 0
+    suma = Object.keys(obj).reduce( (acc, key) => {
+        return acc + obj[key]
+    }, 0)
+    return suma
 }
 
-// for in
-for(let propiedad in koder) {
-    // console.log( propiedad , koder[propiedad] )
+// console.log(sumarSalariosRed(salarios))
+// let salarios  = {
+//     'jorge':  3000,
+//     'juan':  7000,
+//     'Pedro':  3000
+// }
+
+/*
+{
+    llave: valor,
+    llave: valor,
+    llave: valor,
+}
+*/
+// .reduce()
+
+const addArr = (obj) => {
+
+    let suma = 0
+
+    suma = Object.values(obj).reduce((previousValue, currentValue) => {
+        return previousValue += currentValue
+    }, 0)
+
+    return suma
 }
 
-// 1. name : jorge luis
-// 2. lastName : Camarillo
-// ...
+// console.log(addArr(salarios))
 
-let counter = 1
+const addArrOneLine = (obj) => Object.values(obj).reduce((acc, cv) => acc += cv, 0)
+// console.log(addArrOneLine(salarios))
 
-for(let propiedad in koder) {
-    //inicio de cada ciclo
-    // console.log(`${counter}. ${propiedad} : ${koder[propiedad]}`)
-    counter++
-    // fin de cada ciclo
+// Object.assign() -> concat
+
+let obj1 = {
+    'nombre': 'jorge luis',
+    'isMentor': true,
+    'age': 19
+}
+// console.log(obj1)
+let obj2 = {
+    apellido: 'Camarillo'
 }
 
-// Ejercios
-/**
- * Del siguiente objeto
- * 1. Contar el numero de empleados
- * 2. Suma total a pagar
- * -> Son 3 empleados y el total es 130000
- */
-
-let salarios = {
-    'juan': 30000,
-    'Albert': 50000,
-    'jorge': 50000
-}
-
-let total = 0
-let employes = 0
-
-for(salario in salarios) {
-    // console.log(salario, salarios[salario])
-    total += salarios[salario]
-    employes++
-}
-
-// console.log(`Son ${employes} empleados y el total es ${total}`)
+// Object.assign(target, ...sources)
+Object.assign(obj1,obj2)
+// console.log(obj1)
 
 
+// let obj1 = {
+//     nombre: 'jorge luis',
+//     'isMentor': true,
+//     apellido: 'Camarillo'
+// }
+
+
+console.log( Object.entries(obj1) )
+// console.log(obj1)
+// [
+//     ['key', 'value'],
+//     ['key','value' ]
+// ]
+
+// [
+//     ['nombre', 'jorge luis'],
+//     ['apellido','Camarillo']
+// ]
+
+obj1.generation = 6
+// Object.freeze(obj1)
+obj1.generation = 7
+// console.log(obj1)
+delete obj1.generation
+// console.log(obj1)
 
 
 
-/**
- * Arrow function
- * Recibir un objeto
- * Devolver un array con todas las propiedadades que son un string
- * Entrada: objOnlyStrings
- * [modelo,marca,color, version, orige]
- */
 
-const filterStringObject = (obj) => {
-    let onlyStrArr = []
-    for(propiedad in obj){
-        if(typeof obj[propiedad] === 'string'){
-            onlyStrArr.push(propiedad)
-        }
-    }
-    return onlyStrArr
-}
-
-let objOnlyStrings =  {
-    modelo: 'jetta',
-    marca: 'VW',
-    color: 'rojo',
-    year: 2020,
-    tenencias: [2019, 2020, 2021],
-    version: 'sport',
-    origen: 'México'
-}
-
-// console.log(filterStringObject(objOnlyStrings))
-// -> [modelo,marca,color, version, origen]
+// destructuracion de arrays
+let newArr = [10, 20, 30, 40, 50]
+// let a = newArr[0]
+// let b = newArr[1]
+// let c = newArr[2]
+// let d = newArr[3]
+// let [a, b, c, d, e] = newArr
+// console.log(a, b, c, d, e)
+// console.log(newArr)
 
 
-// [1,2,3,4,5,'hola', false, [1,2,3,4], {}, {}, {}]
+// let [a, b] = [10, 20, 30, 40, 50]
+// console.log(a)
+// console.log(b)
 
-// [ {}, {}, {}]
+let [a, b, ...rest] = [10, 20, 30, 40, 50]
+// console.log(a)
+// console.log(b)
+// console.log(...rest)
 
-// [1,2,3,4,5]
+let [firstName, lastName, age] = ['Jorge', 'camarillo', 30]
+// console.log(firstName)
+// console.log(lastName)
+// console.log(age)
 
-// Array de objetos
-let koders =  [
-    {
-        name: 'jorge luis',
-        lastName: 'Camarillo',
-        age: 30,
-        generation: 6,
-        modulos: ['js','node js', 'cloud'],
-    },
-    {
-        name: 'Erik',
-        lastName: 'Gutierrez',
-        age: 20,
-        generation: 15,
-        modulos: ['js'],
-    },
-    {
-        name: 'Sara',
-        lastName: 'Reveles',
-        age: 24,
-        generation: 12,
-        modulos: ['js'],
-    }
+let destrucArr = [
+    ['Bradley', 'Bouley'],
+    ['Chloe', 'Alnaji'],
+    ['Jonathan', 'Baughn'],
+    ['Michael', 'Herman'],
+    ['Robert', 'Hajek'],
+    ['Wes', 'Reid'],
+    ['Zach', 'Klabunde']
 ]
 
-koders.forEach((element, index, array) => {
-    // console.log(element.lastName)
-    // console.log(element.age)
-    // console.log(element.generation)
-    // console.log(element.modulos)
-    console.log(`${element.name} ${element.lastName} tiene ${element.age} años`)  
+destrucArr.forEach((value, index, array) => {
+    let [ nombre, apellido ] = value
+    console.log(`${nombre} ${apellido}`)
 })
 
-/**
- * 1. Hacer una funcion que reciba un objeto de koders
- * 2. Obtener la suma de todas las edades
- * 3. Retornar el total
- * hint: .forEach() .reduce()
- */
 
-const getTotalAge = (obj) => {
-    let totalAge = 0
-    totalAge = obj.reduce( (acc, currentValue) => {
-        acc += currentValue.age
-        return acc
-    }, 0)
-    return totalAge
+// destructuracion de objetos
+const hero = {
+    name: 'Batman',
+    realName: 'Bruce Wayne',
+    otherProp: {
+        prop: 'value',
+    }
 }
-console.log(getTotalAge(koders))
+const { name, realName } = hero
+const { name: firstNameObj, realName: legalName, otherProp } = hero
 
-const getTotalAgeForEach = (obj) => {
-    let totalAge = 0
-    obj.forEach( (cv) => {
-        totalAge += cv.age
-    })
-    return totalAge
+console.log(name, realName)
+console.log(firstNameObj, legalName, otherProp)
+
+
+let users = [
+    { firstName: 'Bradley', lastName: 'Bouley', role: 'Full Stack Resident' },
+    { firstName: 'Chloe', lastName: 'Alnaji', role: 'Full Stack Resident' },
+    { firstName: 'Jonathan', lastName: 'Baughn', role: 'Enterprise Instructor' },
+    { firstName: 'Michael', lastName: 'Herman', role: 'Lead Instructor' },
+    { firstName: 'Robert', lastName: 'Hajek', role: 'Full Stack Resident' },
+    { firstName: 'Wes', lastName: 'Reid', role: 'Instructor'},
+    { firstName: 'Zach', lastName: 'Klabunde', role: 'Instructor'}
+]
+
+users.forEach((value, index, array) => {
+
+    let {
+        firstName, 
+        lastName, 
+        role
+    } = value
+
+    console.log(firstName, lastName, role)
+    // console.log(value.firstName, value.lastName, value.role)
+})
+
+
+
+
+
+// const { nameHero,  realName: secretName } = hero
+// console.log(secretName)
+
+// spread operator
+
+const arr1 = ['one', 'two']
+const arr2 = [...arr1, 'three','four', 'five']
+console.log(arr2)
+
+
+let objspread1 = {
+    propiedad: 'valor',
+    age: 23
 }
-console.log(getTotalAgeForEach(koders))
+let objspread2 = {
+    propiedad2: 'valor2',
+    ...objspread1
+}
 
-const getTotalAgeOneLine = (obj) => obj.reduce( (acc, cv) => acc += cv.age, 0)
-console.log(getTotalAgeOneLine(koders))
+console.log(objspread2)
+
+
+
+
+// 2 ejercicios
+// rest operator
+
+
+
+
+
+
+
+
