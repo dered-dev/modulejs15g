@@ -47,7 +47,7 @@
  * Resultado esperado: makePairs({ a: 1, b: 2 }) => [['a', 1], ['b', 2]]
  * 
  * @params {Object} object - El objeto que queremos transformar
- * @returns {Array} - El array que se espera retornar
+ * @returns [Array] - El array que se espera retornar
  * 
  * @hint https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries
  * @hint https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
