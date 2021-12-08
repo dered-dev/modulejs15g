@@ -33,6 +33,10 @@
  * ·> isAnObjectOrArray( 'Hola mundo' )
  * -> 'No es un array ni un objeto'
  * 
+ * 
+ * @params {Object}, [Array] ,'string' - Estructura que se quiere validar
+ * @returns 'String' - mensaje de respuesta
+ * 
  * @hint https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof
  * @hint https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray
  * 
