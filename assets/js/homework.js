@@ -9,6 +9,8 @@
  * 5. Imprimir en consola todos los lenguajes dominados
  * 6. Clonar el objeto en uno nuevo
  * 7. Imprimir en consola el nuevo objeto
+ * 
+ * @hint https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
  */
 
  let koder = {
