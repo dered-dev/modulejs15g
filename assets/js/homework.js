@@ -67,6 +67,7 @@ const makePairs = (object) => {
 
 
 /**
+ * Ejercicio 4:
  * Realizar una funcion que tome como parametro un string
  * y retorne un array con todos caracteres del string
  * 
