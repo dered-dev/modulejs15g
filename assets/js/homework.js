@@ -42,6 +42,9 @@
  * 
  */
 
+const isAnObjectOrArray = (element) => {
+    
+}
 
 /**
  * Ejercicio 3.
