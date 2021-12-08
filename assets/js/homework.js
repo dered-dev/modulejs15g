@@ -33,8 +33,8 @@
  * ·> isAnObjectOrArray( 'Hola mundo' )
  * -> 'No es un array ni un objeto'
  * 
- * hint: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof
- * hint: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray
+ * @hint https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof
+ * @hint https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray
  * 
  */
 
