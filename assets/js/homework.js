@@ -23,10 +23,10 @@ const joinUsers = (arr) => {
         let userName = user.firstName + ' ' + user.lastName
         acc[userName] = user.role
         return acc
-    }, {})
+    }, {} )
 }
 
-console.log(joinUsers(users))
+// console.log(joinUsers(users))
 
 
 // Ejercicio 2:
@@ -40,7 +40,7 @@ console.log(joinUsers(users))
 //      ]
 // hint: .filter()
 const filterUserByRole = (arr, role) => arr.filter(user => user.role === role )
-console.log(filterUserByRole(users, 'Instructor'))
+// console.log(filterUserByRole(users, 'Instructor'))
 
 
 // Ejercicio 3
@@ -64,20 +64,34 @@ let persons = [
     {name: 'Zack', age: 19, voted: false}
 ]
 
-
 const personVoted = (arrPersons) => {
+
     return arrPersons.reduce( (acc, person) => {
-        return person.voted == true ? acc + 1: acc
+        if(person.voted == true){
+            return acc + 1
+        } else {
+            return acc
+        }
+        // return person.voted == true ? acc + 1: acc
     }, 0)
+
 } 
 
-console.log(personVoted(persons))
+// console.log(personVoted(persons))
 
 
-const averageAgeVoters = () =>  {
-    return persons.reduce( (acc, person) => {
+const averageAgeVotersLarge = (arr) =>  {
+    let totalAge = 0
+    totalAge =  arr.reduce( (acc, person) => {
         return acc + person.age
-    }, 0) / persons.length
+    }, 0)
+    let totalPersons = arr.length
+    let average = totalAge / totalPersons
+    return average
 }
 
+const averageAgeVoters = (arr) => arr.reduce( (acc, person) => acc + person.age, 0) / arr.length 
+
+
+console.log(averageAgeVotersLarge(persons))
 console.log(averageAgeVoters(persons))
