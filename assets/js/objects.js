@@ -54,24 +54,32 @@ koder.setAverage = function () {
     this.totalAverage = this.getAverage()
 }
 
+koder.weight = 90
+koder.height = 1.73
 // Agregar un metodo para calcular el IMC
-koder.setGetIMC = function () {
-    
+koder.getIMC = function () {
+    return this.weight / (this.height * this.height)
 }
 
+// console.log(koder.getIMC())
+
 // Agregar un metodo para Agregar un nuevo promedio
-koder.setNewAve = function () {
-    
+koder.setNewAve = function (score) {
+    this.average.push(score)
 }
+// koder.setNewAve(7)
+// console.log(koder.average)
 
 
 // Agregar un metodo para agregar una nueva propiedad 
-koder.addNewProperty = function () {
+koder.addNewProperty = function (nameProperties) {
     
 }
 
-koder.newProp = ''
-koder['newProp'] = ''
+
+
+
+
 
 
 
