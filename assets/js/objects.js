@@ -73,7 +73,7 @@ koder.setNewAve = function (score) {
 
 // Agregar un metodo para agregar una nueva propiedad 
 koder.addNewProperty = function (nameProperties) {
-    
+    this[nameProperties.nameProperty] = nameProperties.valuePro
 }
 
 
