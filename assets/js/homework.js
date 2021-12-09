@@ -13,12 +13,18 @@
  * @hint https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
  */
 
- let koder = {
+let koder = {
     languages: ["JavaScript", "Python", "Ruby"],
     isMentor: true,
     level: 3,
     avatar: "https://picsum.photos/200/300"
 }
+
+let newOBj =  { ...koder }
+newOBj.age = 30
+console.log(newOBj)
+
+
 
 /**
  * Ejercicio 2:
@@ -61,9 +67,10 @@ const isAnObjectOrArray = (element) => {
  * 
  * Se tiene que realizar 2 soluciones, 1 con Object.entries() y otra con .map()
  */
-const makePairs = (object) => {
-    
-}
+ const makePairs = (object) => Object.entries(object);
+
+const makePairs2 = (object) => Object.keys(object).map((el) => [el, object[el] ]); 
+
 
 
 /**
@@ -83,8 +90,6 @@ const makePairs = (object) => {
  */
 
 const splitString = (str) => {
-
+    return [...str]
 }
-
-
 
