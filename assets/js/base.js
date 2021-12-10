@@ -56,6 +56,31 @@ if( elemenTitle.hasAttribute('class') ) {
         elemenTitle.classList.add('custom')
     }
 }
+// createElement('tag')
+// textContent
+// appendChild
+
+let ulElement = document.createElement('ul')
+// <ul></ul>
+
+let liFirst = document.createElement('li')
+// <li></li>
+liFirst.textContent = 'item 1'
+// <li>item 1</li>
+ulElement.appendChild(liFirst)
+// <ul> <li>item 1</li> </ul>
+
+let liSecond = document.createElement('li')
+// <li></li>
+liSecond.textContent = 'item 2'
+// <li>item 2</li>
+ulElement.appendChild(liSecond)
+// <ul> <li>item 1</li> <li>item 2</li> </ul>
+
+document.getElementsByTagName('body')[0].appendChild(ulElement)
+// body -> <ul> <li>item 1</li> <li>item 2</li> </ul>
+
+
 
 
 
