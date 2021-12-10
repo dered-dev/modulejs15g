@@ -28,12 +28,12 @@ let level = document.querySelector('#head__title').getAttribute('data-level')
 // set
 document.querySelector('#head__title').setAttribute('data-custom','random')
 // reemplazando clases 
-document.querySelector('#head__title').setAttribute('class','trees cuatro')
+// document.querySelector('#head__title').setAttribute('class','trees cuatro')
 
 // Agregar clases
-document.querySelector('#head__title').classList.add('clase3')
+// document.querySelector('#head__title').classList.add('clase3')
 // remover clases
-document.querySelector('#head__title').classList.remove('clase2')
+// document.querySelector('#head__title').classList.remove('clase2')
 
 // comprobar si existe un atributo
 document.querySelector('#head__title').hasAttribute('class')
@@ -47,6 +47,19 @@ document.querySelector('#head__title').hasAttribute('class')
  * ---sino 
  * ----- Agregar la clase "custom"
  */
+
+let elemenTitle = document.querySelector('#head__title')
+if( elemenTitle.hasAttribute('class') ) {
+    if( elemenTitle.getAttribute('class') === 'clase1 clase2' ) {
+        elemenTitle.classList.add('clase3')
+    } else {
+        elemenTitle.classList.add('custom')
+    }
+}
+
+
+
+
 
 
 
