@@ -5,14 +5,15 @@
  * Dado el siguiente Array ['Hoteles', 'Ofertas', 'Viajes', 'Ayuda', 'Cancelaciones']
  * Formar el siguiente markup en el DOM
  * <ul class="menu__booking" data-menu="booking">
-        <li class="menu__booking">Hoteles</li>
-        <li class="menu__booking">Ofertas</li>
-        <li class="menu__booking">Viajes</li>
-        <li class="menu__booking">Ayuda</li>
-        <li class="menu__booking">Cancelaciones</li>
+        <li class="menu__booking__item">Hoteles</li>
+        <li class="menu__booking__item">Ofertas</li>
+        <li class="menu__booking__item">Viajes</li>
+        <li class="menu__booking__item">Ayuda</li>
+        <li class="menu__booking__item">Cancelaciones</li>
     </ul>
  * 
  */
+
 
 
 
