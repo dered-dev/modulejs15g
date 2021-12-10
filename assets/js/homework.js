@@ -2,7 +2,7 @@
 
 /**
  * Ejercicio 1.
- * Dado el siguiente Array [Hoteles, Ofertas, Viajes, Ayuda, Cancelaciones]
+ * Dado el siguiente Array ['Hoteles', 'Ofertas', 'Viajes', 'Ayuda', 'Cancelaciones']
  * Formar el siguiente markup en el DOM
  * <ul class="menu__booking" data-menu="booking">
         <li class="menu__booking">Hoteles</li>
@@ -13,6 +13,7 @@
     </ul>
  * 
  */
+
 
 
 
