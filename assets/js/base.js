@@ -81,27 +81,40 @@ document.getElementsByTagName('body')[0].appendChild(ulElement)
 // body -> <ul> <li>item 1</li> <li>item 2</li> </ul>
 
 
-
-
-
-
-
-
-
-
-
-
-
-// data attributes
-// propiedades personalizadas
-
-
-
 /**
- * Seleccionar padres e hijos (traversing)
+ * Ejercicio 1
+ * <ul id="menu" class="menu">
+        <li class="item__menu">Home</li>
+        <li class="item__menu">Products</li>
+        <li class="item__menu">About Us</li>
+    </ul>
+
+    Replicar con JS este markup
  */
 
 
-/**
- * Manipular elementos del DOM
- */
+let ulMenu = document.createElement('ul')
+ulMenu.classList.add('menu')
+ulMenu.setAttribute('id','menu')
+
+let liMenuHome = document.createElement('li')
+liMenuHome.classList.add('item__menu')
+liMenuHome.textContent = 'Home'
+ulMenu.appendChild(liMenuHome)
+
+let liMenuProducts = document.createElement('li')
+liMenuProducts.classList.add('item__menu')
+liMenuProducts.textContent = 'Products'
+ulMenu.appendChild(liMenuProducts)
+
+let liMenuAboutUs = document.createElement('li')
+liMenuAboutUs.classList.add('item__menu')
+liMenuAboutUs.textContent = 'About Us'
+ulMenu.appendChild(liMenuAboutUs)
+
+document.getElementById('body').appendChild(ulMenu)
+
+
+
+
+
