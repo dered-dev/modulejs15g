@@ -14,13 +14,14 @@
  * 
  */
 
-let menuContainer = document.createElement('ul')
+let menuContainer = document.createElement('ul')    
 menuContainer.classList.add('menu__booking')
 menuContainer.setAttribute('id','menu__booking')
 
 let arrMenu = ['Hoteles', 'Ofertas', 'Viajes', 'Ayuda', 'Cancelaciones']
 
 arrMenu.forEach( (menu) => {
+    
     let liMenu = document.createElement('li')
     liMenu.classList.add('menu__booking__item')
     liMenu.textContent = menu
@@ -28,6 +29,8 @@ arrMenu.forEach( (menu) => {
 })
 
 document.getElementsByTagName('body')[0].appendChild(menuContainer)
+
+
 
 
 
@@ -67,7 +70,7 @@ document.getElementsByTagName('body')[0].appendChild(menuContainer)
 let container = document.createElement('section')
 container.classList.add('grid__services')
 
-objPromesas.forEach((service)=> {
+objPromesas.forEach( (service) => {
     let divService = document.createElement('div')
     divService.classList.add('grid__services__item')
 
