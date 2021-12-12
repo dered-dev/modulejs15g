@@ -46,3 +46,37 @@ let koders = [
 ]
 
 
+const filterKoder = () => {
+    // filtrar ciudades
+    let KoderSearch = document.querySelector('#name__koder').value.toLowerCase()
+    let kodersFiltered = koders.filter( (koder) => {
+        let koderName = koder.name.toLowerCase()
+        if(koderName.includes(KoderSearch) === true){
+            return koder
+        }
+    })
+    console.log(kodersFiltered)
+
+    // creo el layout con las ciudades filtradas
+    let lista = ''
+    kodersFiltered.forEach( (koder) => {
+        lista += `
+            <li>
+                <strong>${koder.name}</strong>
+                <span>${koder.age} años</span>
+                <span>${koder.city}</span>
+            </li>
+        `
+    })
+
+    // agrego el layout
+    document.querySelector('#listKoders').innerHTML = lista
+}
+
+
+const changeFilter = () => {
+    console.log('cambio el filtro')
+    let filter = document.querySelector('#filterby').value
+    console.log(filter)
+    
+}
