@@ -63,6 +63,7 @@ let koders = [
 
 const orderArray = (arr) => {
     let copyArray = [...arr]
+
     let order = document.querySelector('#orderFilter').value
     let KoderTerm = document.querySelector('#filterby').value
     if(KoderTerm !== 'age'){
@@ -104,17 +105,18 @@ const orderArray = (arr) => {
                 return a[KoderTerm] - b[KoderTerm]
             }) 
         } else {
-            copyArray.sort( function ( a, b ) { 
+            copyArray.sort( function ( a, b ) {
+                console.log(a,b) 
                 return b[KoderTerm] - a[KoderTerm]
             })
         }
-    } 
+    }
+
     return copyArray
     
 }
 
 // FUncion => tarea especifica
-
 const filterKoders = () => {
     // filtrar ciudades
     let KoderSearch = document.querySelector('#name__koder').value.toLowerCase()
@@ -135,7 +137,11 @@ const filterKoders = () => {
     })
 
     // console.log(kodersFiltered)
+    console.log('koders filtrados')
+    console.log(kodersFiltered)
+
     let kodersFilteredOrdered = orderArray(kodersFiltered)
+    console.log('koders filtrados y ordenados')
     console.log(kodersFilteredOrdered)
 
     // creo el layout con las ciudades filtradas
@@ -162,10 +168,6 @@ const orderFilter = () => {
 const filterKoder = () => {
     filterKoders()
 }
-
-
-
-
 
 const changeFilter = () => {
     filterKoders()
