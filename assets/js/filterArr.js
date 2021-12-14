@@ -39,22 +39,48 @@ let koders = [
         city: 'Guadalajara'
     },
     {
-        name: 'Brisset',
+        name: 'emilio',
         age: 30,
+        city: 'guanajuato'
+    },
+    {
+        name: 'Brisset',
+        age: 37,
         city: 'Lima'
     }
 ]
 
 
-const filterKoder = () => {
+// FUncion => tarea especifica
+
+const filterKoders = () => {
     // filtrar ciudades
     let KoderSearch = document.querySelector('#name__koder').value.toLowerCase()
+    let KoderTerm = document.querySelector('#filterby').value.toLowerCase()
+    console.log(KoderTerm)
+
     let kodersFiltered = koders.filter( (koder) => {
-        let koderName = koder.name.toLowerCase()
-        if(koderName.includes(KoderSearch) === true){
-            return koder
+        console.log(koder)
+
+        // if( koder.name.toLowerCase().includes(KoderSearch) ){
+        //     return koder  
+        // }
+
+        
+        let koderTerm = typeof koder[KoderTerm] !== 'number' ? koder[KoderTerm].toLowerCase() : koder[KoderTerm]
+        console.log(koderTerm)
+
+        if(KoderTerm === 'age') {
+            if((koderTerm).toString().includes(KoderSearch) === true){
+                return koder
+            }
+        } else  {
+            if(koderTerm.includes(KoderSearch) === true){
+                return koder
+            }
         }
     })
+
     console.log(kodersFiltered)
 
     // creo el layout con las ciudades filtradas
@@ -68,15 +94,18 @@ const filterKoder = () => {
             </li>
         `
     })
+    console.log(lista)
 
     // agrego el layout
     document.querySelector('#listKoders').innerHTML = lista
 }
 
+const filterKoder = () => {
+    filterKoders()
+}
+
+
 
 const changeFilter = () => {
-    console.log('cambio el filtro')
-    let filter = document.querySelector('#filterby').value
-    console.log(filter)
-    
+    filterKoders()
 }
