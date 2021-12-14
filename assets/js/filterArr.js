@@ -34,14 +34,24 @@ const filterCity = () => {
 
 let koders = [
     {
-        name: 'emilio',
+        name: 'Emilio',
         age: 30,
         city: 'Guadalajara'
     },
     {
-        name: 'emilio',
+        name: 'Pedro',
         age: 30,
-        city: 'guanajuato'
+        city: 'Leon'
+    },
+    {
+        name: 'Brisset',
+        age: 37,
+        city: 'Lima'
+    },
+    {
+        name: 'alex',
+        age: 37,
+        city: 'Lima'
     },
     {
         name: 'Brisset',
@@ -51,24 +61,49 @@ let koders = [
 ]
 
 
+const orderArray = (arr) => {
+    let copyArray = [...arr]
+    let order = document.querySelector('#orderFilter').value
+    let KoderTerm = document.querySelector('#filterby').value
+    if(KoderTerm !== 'age'){
+        if(order == 'asc') {
+            copyArray.sort(function (x, y) {
+                let a = x[KoderTerm].toUpperCase(),
+                b = y[KoderTerm].toUpperCase();
+                return a == b ? 0 : a > b ? 1 : -1;
+            })
+        } else {
+            console.log(KoderTerm)
+            copyArray.sort(function (x, y) {
+                let a = x[KoderTerm].toUpperCase(),
+                b = y[KoderTerm].toUpperCase();
+                return b == a ? 0 : b > a ? 1 : -1;
+            })
+        }
+    } else {
+        if(order == 'asc'){
+            copyArray.sort( function ( a, b ) { 
+                return a[KoderTerm] - b[KoderTerm]
+            }) 
+        } else {
+            copyArray.sort( function ( a, b ) { 
+                return b[KoderTerm] - a[KoderTerm]
+            })
+        }
+    } 
+    return copyArray
+    
+}
+
 // FUncion => tarea especifica
 
 const filterKoders = () => {
     // filtrar ciudades
     let KoderSearch = document.querySelector('#name__koder').value.toLowerCase()
     let KoderTerm = document.querySelector('#filterby').value.toLowerCase()
-    console.log(KoderTerm)
 
-    let kodersFiltered = koders.filter( (koder) => {
-        console.log(koder)
-
-        // if( koder.name.toLowerCase().includes(KoderSearch) ){
-        //     return koder  
-        // }
-
-        
+    let kodersFiltered = koders.filter( (koder) => {        
         let koderTerm = typeof koder[KoderTerm] !== 'number' ? koder[KoderTerm].toLowerCase() : koder[KoderTerm]
-        console.log(koderTerm)
 
         if(KoderTerm === 'age') {
             if((koderTerm).toString().includes(KoderSearch) === true){
@@ -81,11 +116,13 @@ const filterKoders = () => {
         }
     })
 
-    console.log(kodersFiltered)
+    // console.log(kodersFiltered)
+    let kodersFilteredOrdered = orderArray(kodersFiltered)
+    console.log(kodersFilteredOrdered)
 
     // creo el layout con las ciudades filtradas
     let lista = ''
-    kodersFiltered.forEach( (koder) => {
+    kodersFilteredOrdered.forEach( (koder) => {
         lista += `
             <li>
                 <strong>${koder.name}</strong>
@@ -94,15 +131,21 @@ const filterKoders = () => {
             </li>
         `
     })
-    console.log(lista)
 
     // agrego el layout
     document.querySelector('#listKoders').innerHTML = lista
 }
 
+
+const orderFilter = () => {
+    filterKoders()
+}
+
 const filterKoder = () => {
     filterKoders()
 }
+
+
 
 
 
