@@ -67,17 +67,35 @@ const orderArray = (arr) => {
     let KoderTerm = document.querySelector('#filterby').value
     if(KoderTerm !== 'age'){
         if(order == 'asc') {
-            copyArray.sort(function (x, y) {
-                let a = x[KoderTerm].toUpperCase(),
-                b = y[KoderTerm].toUpperCase();
-                return a == b ? 0 : a > b ? 1 : -1;
+            copyArray.sort(function (firstEl, secondEl) {
+                let a = firstEl[KoderTerm].toUpperCase(),
+                b = secondEl[KoderTerm].toUpperCase();
+                //return a == b ? 0 : a > b ? 1 : -1
+                if(a > b) {
+                    return 1
+                } 
+                if (a < b) {
+                    return -1
+                }
+                if(a == b){
+                    return 0
+                }
             })
         } else {
             console.log(KoderTerm)
-            copyArray.sort(function (x, y) {
-                let a = x[KoderTerm].toUpperCase(),
-                b = y[KoderTerm].toUpperCase();
-                return b == a ? 0 : b > a ? 1 : -1;
+            copyArray.sort(function (firstEl, secondEl) {
+                let a = firstEl[KoderTerm].toUpperCase(),
+                b = secondEl[KoderTerm].toUpperCase();
+                // return b == a ? 0 : b > a ? 1 : -1;
+                if(b > a) {
+                    return 1
+                } 
+                if (b < a) {
+                    return -1
+                }
+                if(b == a){
+                    return 0
+                }
             })
         }
     } else {
