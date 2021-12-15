@@ -14,8 +14,27 @@
  * window.location.protocol
  * 
  * Navigator
- * navigator.appName
- * navigator.appCodeName
- * navigator.platform
+ * window.navigator.appName
+ * window.navigator.appCodeName
+ * window.navigator.platform
+ * 
+ * History
+ * window.history.back()
+ * window.history.forward()
+ * 
+ * Alert
+ * window.alert()
 
  */
+
+// alert
+// window.alert('mensaje a mostrar')
+
+
+// crear un listener de #prev
+// aplicar history.back() o history.forward()
+
+
+
+
+

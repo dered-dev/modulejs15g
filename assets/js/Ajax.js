@@ -7,6 +7,21 @@
  * 
  */
 
+const xhttp = new XMLHttpRequest()
+xhttp.onload = function(data) {
+    if(data.target.status === 200){
+
+        // console.log(data)
+        //console.log(data.target.response)
+        // console.log(data.target.status)
+        console.log( JSON.parse(data.target.response) )
+    }
+}
+xhttp.open("GET", "https://jsonplaceholder.typicode.com/posts", true)
+xhttp.send()
+
+
+
 
 const getData = (url, funcionALlamar, selector, method = 'GET') => {
     const request = new XMLHttpRequest()
@@ -28,3 +43,5 @@ const getData = (url, funcionALlamar, selector, method = 'GET') => {
     request.open(method,url)
     request.send()
 }
+
+
