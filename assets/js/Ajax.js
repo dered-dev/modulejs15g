@@ -25,6 +25,7 @@
 
 
 const xhttp = new XMLHttpRequest()
+xhttp.open("GET", "https://jsonplaceholder.typicode.com/posts", true)
 
 xhttp.onload = function(data) {
     if(data.target.status === 200){
@@ -35,8 +36,6 @@ xhttp.onload = function(data) {
         console.log( JSON.parse(data.target.response) )
     }
 }
-
-xhttp.open("GET", "https://jsonplaceholder.typicode.com/posts", true)
 xhttp.send()
 
 
