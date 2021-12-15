@@ -36,5 +36,16 @@
 
 
 
+let prevBtn = document.getElementById('prev')
+let nextBtn = document.getElementById('next')
+
+prevBtn.addEventListener('click', () => {
+    window.history.back()
+})
+nextBtn.addEventListener('click', () => {
+    window.history.forward()
+})
+
+
 
 
