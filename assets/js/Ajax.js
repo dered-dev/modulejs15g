@@ -23,20 +23,57 @@
 // armar la respuesta
 // enviar la respuesta
 
+// XMLHttpRequest()
+/**
+ * Declarar un objeto XMLHttpRequest
+ * Abrir la conexion (empezar a creat el request)
+ * Escuchar cuando el response este listo
+ * Enviar la peticion
+ * 
+ */
 
+//  Declarar un objeto XMLHttpRequest
 const xhttp = new XMLHttpRequest()
-xhttp.open("GET", "https://jsonplaceholder.typicode.com/posts", true)
+// Abrir la conexion (empezar a creat el request)
+// xhttp.open(metodo, url)
+xhttp.open( "GET" , "https://jsonplaceholder.typicode.com/posts/1", true)
 
+// Escuchar cuando el response este listo
 xhttp.onload = function(data) {
-    if(data.target.status === 200){
 
-        // console.log(data)
-        //console.log(data.target)
-        // console.log(data.target.response)
-        console.log( JSON.parse(data.target.response) )
+    if(data.target.status === 200){
+        let res = data.target.response
+        let objResp = JSON.parse(res)
+        // imprimir en DOM
+        let templateUser = ''
+        templateUser = `
+        <div>
+            <h2>${objResp.title}</h2>
+            <p>${objResp.body}</p>
+        </div>
+        `
+        document.querySelector('.container').innerHTML = templateUser
     }
+    
 }
+
+// Enviar la peticion
 xhttp.send()
+
+/**
+ * 
+ * 
+ * 
+ */
+
+// objeto a texto JSON.stringify(obj)
+// texto a objeto JSON.parse(text)
+
+// APi fetch
+
+// fetch()
+
+
 
 
 
