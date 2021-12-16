@@ -1,25 +1,35 @@
 
 /**
+ * 
  * Tarea 1
- * Investigar que son los callback
- * 
- * Tarea 2
- * revisar esta url
- * https://jsonplaceholder.typicode.com/
- * 
- * Tarea 3
- * Revisar este diagrama 
- * https://www.javascript-coder.com/tutorials/images/ajax-block-diagram1.jpg
- * 
- * 
- * Tarea 4
- * Estudiar el Api XMLHttpRequest
- * https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
- * 
- * Tarea 5
+ * Estudiar promesas JS
  * Esdutiar el api fetch
  * https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
  * 
  */
+
+/**
+ * Tarea 2
+ * Metodos (verbos http)
+ * GET
+ * 
+ * POST, PUT, PATCH, DELETE
+ */
+
+
+/**
+ * Tarea 3
+ * Crear una cuenta en firebase
+ */
+
+
+/**
+ * 
+ * Tarea 4
+ * Generar un grid de todos los usuarios 
+ * https://jsonplaceholder.typicode.com/users
+ * 
+ */
+
 
 
