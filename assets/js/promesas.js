@@ -17,54 +17,68 @@ let koders = [
         gender: 'M',
         avatar: 'https://i.pravatar.cc/150?img=67'
     },
-    {
-        name: 'Maria',
-        age: 30,
-        city: 'Ciudad de méxico',
-        generacion: 6,
-        typeKoder: 'iOS',
-        gender: 'M',
-        avatar: 'https://i.pravatar.cc/150?img=47'
-    },
-    {
-        name: 'Ivonne',
-        age: 30,
-        city: 'Ciudad de méxico',
-        generacion: 6,
-        typeKoder: 'iOS',
-        gender: 'M',
-        avatar: 'https://i.pravatar.cc/150?img=45'
-    },
-    {
-        name: 'Alex',
-        age: 30,
-        city: 'Ciudad de méxico',
-        generacion: 6,
-        typeKoder: 'iOS',
-        gender: 'M',
-        avatar: 'https://i.pravatar.cc/150?img=38'
-    }
 ]
+
+// const getKoderSet =  () => {
+//     setTimeout( ()=> {
+//         return koders
+//     }, 4000 )
+
+// }
+
+// console.log(getKoderSet())
 
 const getKoders = () => {
     return new Promise( (resolve, reject) => {
-        setTimeout( () => {
-            //resolve(koders)
-            reject( new Error('Error al obtener los datos'))
-        }, 1500)
+        let edad = 17
+        if(edad >= 18){
+            setTimeout( () => {
+                resolve('promesa exitosa')
+            }, 2000)
+        } else {
+            setTimeout( () => {
+                // reject( new Error('No tienes la edad suficiente'))
+                reject( 'No tienes la edad suficiente')
+            }, 2000)
+        }
     })
 }
 
-const fetchData = async() => {
-    try {
-        const kodersFetched = await getKoders()
-        console.log(kodersFetched)
-    } catch (error) {
-        console.log(error.message)
-    }
-    
-}
+getKoders()
+.then( (response) => {
+    console.log('Ejecutar el paso 1')
+    return response
+})
+.then( (response2) => {
+    console.log('Ejecutar el paso 2')
+    return response2
+})
+.then( (response3) => {
+    console.log('Ejecutar el paso 3')
+    console.log(response3)
+})
+.catch( (err) => {
+    console.log('Promesa rechazada')
+    console.log(err)
+})
 
-fetchData()
+
+
+
+// const promesa = new Promise( (resolve, reject) => {
+
+// })
+
+// const fetchData = async() => {
+//     try {
+//         const kodersFetched = await getKoders()
+//         console.log(kodersFetched)
+//     } catch (error) {
+//         console.log(error.message)
+//     }
+    
+// }
+
+// fetchData()
 
 

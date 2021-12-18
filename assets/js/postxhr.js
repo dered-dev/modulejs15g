@@ -17,6 +17,32 @@ const createUser =  (objPost) => {
     xhttp.send( JSON.stringify(objPost) )
 }
 
+const createUserFetch =  (objPost) => {
+    fetch('https://genjs-292ac-default-rtdb.firebaseio.com/posts/.json', {
+        method:'POST',
+        header: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(objPost)
+    }).then( (res) => {
+        res.json()
+        .then( (newpost) => {
+            console.log(newpost)
+            document.querySelector('#title').value = ''
+            document.querySelector('#author').value = ''
+            document.querySelector('#timetoread').value = ''
+            document.querySelector('#resume').value = ''
+    
+            document.getElementById('post__id').innerText = newpost.name
+            document.getElementById('alert__response').classList.remove('d-none')
+        })
+    }).catch((err)=> {
+        console.log(err)
+    })
+
+    
+}
+
 
 let send__post = document.querySelector('#send__post')
 send__post.addEventListener('click', () => {
@@ -25,9 +51,6 @@ send__post.addEventListener('click', () => {
     let author = document.querySelector('#author').value
     let timetoread = document.querySelector('#timetoread').value
     let resume = document.querySelector('#resume').value
-
-    
-    // console.log(title, author, timetoread, resume)
     if(
         title !== '' &&
         author !== '' &&  
@@ -42,7 +65,8 @@ send__post.addEventListener('click', () => {
             resume: resume
         }
     
-        createUser(objNewPost)
+        // createUser(objNewPost)
+        createUserFetch(objNewPost)
     } else {
         alert('Algunos datos estan vacios')
     }
