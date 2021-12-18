@@ -5,12 +5,12 @@ window.addEventListener('load', () => {
 
     const xhttp = new XMLHttpRequest()
     let idPost = location.search.slice(8)
-    console.log(idPost)
     xhttp.open( "GET" , `https://genjs-292ac-default-rtdb.firebaseio.com/posts/${idPost}.json`, true)
     xhttp.onload = function(data) {
         if(data.target.status === 200) {
             let objResp = JSON.parse(data.target.response)
-            console.log(objResp)
+            
+            // console.log(objResp)
             // Llenar el formulario
 
             document.querySelector('#title').value = objResp.title
@@ -63,6 +63,22 @@ update__post.addEventListener('click', () => {
         alert('Algunos datos estan vacios')
     }
 
+})
+
+// DELETE eliminar post
+
+let delete__post = document.getElementById('delete__post')
+delete__post.addEventListener('click', () => {
+    let idPost = location.search.slice(8)
+    const xhttp = new XMLHttpRequest()
+    xhttp.open( "DELETE" , `https://genjs-292ac-default-rtdb.firebaseio.com/posts/${idPost}.json`, true)
+    xhttp.onload = function(data) {
+        if(data.target.status === 200){
+            location.replace('http://127.0.0.1:5500/')
+            // document.getElementById('alert__response').classList.remove('d-none')
+        }
+    }
+    xhttp.send() 
 })
 
 
