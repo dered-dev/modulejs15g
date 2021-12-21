@@ -2,29 +2,47 @@
 
 // ir por los datos del post
 window.addEventListener('load', () => {
+    // const xhttp = new XMLHttpRequest()
+    // let idPost = location.search.slice(8)
+    // xhttp.open( "GET" , `https://genjs-292ac-default-rtdb.firebaseio.com/posts/${idPost}.json`, true)
+    // xhttp.onload = function(data) {
+    //     if(data.target.status === 200) {
+    //         let objResp = JSON.parse(data.target.response)
 
-    const xhttp = new XMLHttpRequest()
+    //         document.querySelector('#title').value = objResp.title
+    //         document.querySelector('#author').value = objResp.author
+    //         document.querySelector('#timetoread').value = objResp.timetoread
+    //         document.querySelector('#resume').value = objResp.resume
+
+    //     }
+    // }
+    // xhttp.send()
+    // fetch('url', objOptions)
+
     let idPost = location.search.slice(8)
-    xhttp.open( "GET" , `https://genjs-292ac-default-rtdb.firebaseio.com/posts/${idPost}.json`, true)
-    xhttp.onload = function(data) {
-        if(data.target.status === 200) {
-            let objResp = JSON.parse(data.target.response)
-            
-            // console.log(objResp)
-            // Llenar el formulario
-
-            document.querySelector('#title').value = objResp.title
-            document.querySelector('#author').value = objResp.author
-            document.querySelector('#timetoread').value = objResp.timetoread
-            document.querySelector('#resume').value = objResp.resume
-
+    console.log(idPost)
+    fetch(
+        `https://genjs-292ac-default-rtdb.firebaseio.com/posts/${idPost}.json`,
+        {
+            method: 'GET',
         }
-    }
-    xhttp.send()
+    )
+    .then( (response) => {
+        return response.json()
+    })
+    .then( (post) => {
+        document.querySelector('#title').value = post.title
+        document.querySelector('#author').value = post.author
+        document.querySelector('#timetoread').value = post.timetoread
+        document.querySelector('#resume').value = post.resume
+    })
+    .catch((err) => {
+        console.log(err)
+    })
 })
 
 
-// PATCH actualizar datos
+// PATCH actualizar datos XHR
 const updateUser =  (objPost, idPost) => {
     const xhttp = new XMLHttpRequest()
     xhttp.open( "PATCH" , `https://genjs-292ac-default-rtdb.firebaseio.com/posts/${idPost}.json`, true)
@@ -35,6 +53,28 @@ const updateUser =  (objPost, idPost) => {
     }
     xhttp.send( JSON.stringify(objPost) )
 }
+
+// PATCH actualizar datos Fetch
+const updateUserFetch =  (objPost, idPost) => {
+    fetch(
+        `https://genjs-292ac-default-rtdb.firebaseio.com/posts/${idPost}.json`, 
+        {
+            method: 'PATCH',
+            headers: {
+                'Content-Type':'application/json'
+            },
+            body: JSON.stringify(objPost)
+        }
+    ).then( (res)=> {
+        return res.json()
+    }).then ( (res) => {
+        console.log(res)
+        document.querySelector('#alert__response').classList.remove('d-none')
+    })
+
+
+}
+
 
 let update__post = document.querySelector('#update__post')
 update__post.addEventListener('click', () => {
@@ -58,7 +98,8 @@ update__post.addEventListener('click', () => {
             resume: resume
         }
     
-        updateUser(postToUpdate, idPost )
+        // updateUser(postToUpdate, idPost )
+        updateUserFetch(postToUpdate, idPost )
     } else {
         alert('Algunos datos estan vacios')
     }
