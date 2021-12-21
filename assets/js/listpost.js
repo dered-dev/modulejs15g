@@ -1,15 +1,30 @@
 // GET 
-const getPosts =  (funcionALlamar) => {
-    const xhttp = new XMLHttpRequest()
-    xhttp.open( "GET" , `https://genjs-292ac-default-rtdb.firebaseio.com/posts/.json`, true)
-    xhttp.onload = function(data) {
-        // console.log(data)
-        if(data.target.status === 200){
-            funcionALlamar(data.target.response)
-        }
-    }
-    xhttp.send()
+// const getPosts =  (funcionALlamar) => {
+//     const xhttp = new XMLHttpRequest()
+//     xhttp.open( "GET" , `https://genjs-292ac-default-rtdb.firebaseio.com/posts/.json`, true)
+//     xhttp.onload = function(data) {
+//         // console.log(data)
+//         if(data.target.status === 200){
+//             funcionALlamar(data.target.response)
+//         }
+//     }
+//     xhttp.send()
+// }
+
+const getPosts = () => {
+    fetch('https://genjs-292ac-default-rtdb.firebaseio.com/posts/.json')
+    .then((res) => {
+        return res.json()
+    })
+    .then( (response)=> {
+        console.log(response)
+    })
+    .catch((err) => {
+        console.log(err)
+    })
 }
+
+
 
 const funcionCallback =  (posts) => {
     console.log(posts)
