@@ -11,13 +11,14 @@
 //     xhttp.send()
 // }
 
-const getPosts = () => {
+const getPosts = (funcionCallback) => {
     fetch('https://genjs-292ac-default-rtdb.firebaseio.com/posts/.json')
     .then((res) => {
         return res.json()
     })
     .then( (response)=> {
         console.log(response)
+        funcionCallback(response)
     })
     .catch((err) => {
         console.log(err)
@@ -28,7 +29,7 @@ const getPosts = () => {
 
 const funcionCallback =  (posts) => {
     console.log(posts)
-    let parsedPosts = JSON.parse(posts)
+    let parsedPosts = posts
     console.log(parsedPosts)
     let layout = ''
     for(post in parsedPosts) {
